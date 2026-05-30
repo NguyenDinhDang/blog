@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Last Journey of Three Brothers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =============================================
+       OPENING SCENE — Envelope / Landing Screen
+       ============================================= -->
+  <div id="opening-scene">
+
+    <!-- Animated background canvas (particles, dust, light) -->
+    <canvas id="opening-canvas"></canvas>
+
+    <!-- Glowing invitation text -->
+    <p id="click-hint">Click the letter</p>
+
+    <!-- Envelope wrapper (hover lift, click trigger) -->
+    <div id="envelope-wrap">
+      <div id="envelope">
+
+        <!-- Envelope flap (top triangle) -->
+        <div id="env-flap"></div>
+
+        <!-- Left and right triangle folds -->
+        <div id="env-left"></div>
+        <div id="env-right"></div>
+        <div id="env-bottom"></div>
+
+        <!-- Inner glow that bleeds out when opened -->
+        <div id="env-glow"></div>
+
+        <!-- The paper that slides out on click -->
+        <div id="paper">
+          <div id="paper-lines">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /opening-scene -->
+
+
+  <!-- =============================================
+       BLOG PAGE — Revealed after animation
+       ============================================= -->
+  <main id="blog-page" class="hidden">
+
+    <!-- Ambient background canvas (dust, grain, light drift) -->
+    <canvas id="blog-canvas"></canvas>
+
+    <!-- ── HERO ── -->
+    <header id="hero">
+      <div class="hero-inner reveal">
+        <div class="hero-rule"></div>
+        <h1 id="hero-title">The Last Journey<br>of Three Brothers</h1>
+        <p id="hero-sub">A memory I never want to forget</p>
+        <div class="hero-rule"></div>
+      </div>
+    </header>
+
+    <!-- ── STORY BODY ── -->
+    <article id="story">
+
+      <p class="prose reveal">
+        If I do not write this blog today, I think I will forget the true meaning of <em>"travel"</em>.
+      </p>
+
+      <p class="prose reveal">
+        For a long time, I am too busy with my study and life, so I didn't think about traveling.
+        I almost forgot how it feel to pack a bag and go somewhere new. Everything change when
+        my two close friends called me and said:
+      </p>
+
+      <blockquote class="reveal">
+        "Let's go together before it is too late."
+      </blockquote>
+
+      <p class="prose reveal">
+        So, the three of us decided to go.
+      </p>
+
+      <p class="prose reveal">
+        We traveled by motorbike to a small place near the beach. The journey on our motorbikes
+        was full of laughs and beautiful views. On the road, our small group drove together,
+        felt the wind on our face, and stop at many beautiful places to take photos.
+      </p>
+
+      <p class="prose reveal">
+        We talked about old stories, listen to our favorite music when we took a rest,
+        and ate snacks like children.
+      </p>
+
+      <!-- ══ IMAGE 1 PLACEHOLDER ══ -->
+      <figure class="photo-frame reveal" id="photo-1">
+        <!-- IMAGE 1 PLACEHOLDER -->
+        <!-- Replace the div below with: <img src="your-photo.jpg" alt="On the road"> -->
+        <img src="anh1.jpg" alt="before sun rise">
+        <figcaption>Before the sun rise, with the wind and laughter</figcaption>
+      </figure>
+
+      <p class="prose reveal">
+        When we arrived, the weather was beautiful with warm sunshine and blue sea.
+        We swam together, ran on the sand, and ate a lot of delicious seafood.
+      </p>
+
+      <p class="prose reveal">
+        At that moment, I felt so happy because I have my two true brothers by my side.
+      </p>
+
+      <!-- Emotional turning point — visual divider -->
+      <div class="divider reveal">
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+        <span class="divider-line"></span>
+        <span class="divider-dot"></span>
+      </div>
+
+      <p class="prose reveal prose-sad">
+        However, this trip was also very special and sad.
+      </p>
+
+      <p class="prose reveal prose-sad">
+        It was the last time the three of us can meet each other.
+      </p>
+
+      <p class="prose reveal">
+        After that trip, everything changed.
+        One friend had to join the military service, another friend went to a new city for
+        university, and I stayed here with my own life.
+      </p>
+
+      <p class="prose reveal">
+        We became very busy and couldn't find any free time to meet again.
+        Our group chat with three people became quiet day by day.
+      </p>
+
+      <!-- ══ IMAGE 2 PLACEHOLDER ══ -->
+      <figure class="photo-frame reveal" id="photo-2">
+        <!-- IMAGE 2 PLACEHOLDER -->
+        <img src="anh2.jpg" alt="The three of us">
+        
+        <figcaption>The last photo of three brothers, by the sea</figcaption>
+      </figure>
+
+      <p class="prose reveal">
+        Now, when I sit alone in my room and look at our old photos of three people, I miss them so much.
+      </p>
+
+      <p class="prose reveal">
+        I really hope that one day in the future, we can meet again.
+        I want us to sit together, talk face to face, and play video games like the old days
+        when we were students.
+      </p>
+
+      <p class="prose reveal">
+        Thank you for being a beautiful part of my youth, my brothers.
+      </p>
+
+    </article><!-- /story -->
+
+    <!-- ── ENDING SECTION ── -->
+    <footer id="ending">
+      <div class="ending-inner reveal">
+        <div class="ending-glow-line"></div>
+        <p class="ending-poem">
+          Some journeys end.<br>
+          Some friendships drift apart.<br>
+          But some memories never leave.
+        </p>
+        <p class="ending-dedication">For my brothers.</p>
+        <div class="falling-particles" id="falling-particles"></div>
+      </div>
+    </footer>
+
+  </main><!-- /blog-page -->
+
+
+  <!-- ── FLOATING MUSIC BUTTON ── -->
+  <button id="music-btn" title="Toggle background music" class="hidden">
+    <span id="music-icon">♪</span>
+  </button>
+
+  <!-- ADD MUSIC FILE HERE -->
+  <!-- <audio id="bg-music" loop>
+         <source src="your-music.mp3" type="audio/mpeg">
+       </audio> -->
+  <!-- Placeholder audio element — no file attached -->
+  <audio id="bg-music" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
